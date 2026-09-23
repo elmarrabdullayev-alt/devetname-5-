@@ -1,0 +1,53 @@
+/* Envelope Video Intro Styling */
+.envelope-intro-root {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1A050B;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.envelope-intro-stage {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  height: 100%;
+  height: 100dvh;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #F7F1E7;
+  cursor: pointer;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+.envelope-media-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 150 ms crossfade between poster and opening video */
+.fade-crossfade-150 {
+  transition: opacity 150ms ease-in-out;
+}
+
+/* 500 ms hero crossfade */
+.fade-hero-500 {
+  transition: opacity 500ms ease-in-out;
+}
+
+/* 250 ms hint fade out */
+.fade-hint-250 {
+  transition: opacity 250ms ease-out, transform 250ms ease-out;
+}

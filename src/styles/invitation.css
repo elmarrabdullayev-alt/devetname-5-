@@ -1,0 +1,367 @@
+/* Premium Digital Wedding Invitation Custom Styles */
+
+:root {
+  --color-ivory: #F7F1E7;
+  --color-burgundy: #741F3A;
+  --color-champagne: #C7A56A;
+  --color-cream: #FFF9F0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  background-color: #1A050B;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-serif-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-calligraphy {
+  font-family: 'Alex Brush', cursive;
+}
+
+.font-sans-clean {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Subtle luxury paper texture background */
+.bg-paper-texture {
+  background-color: #FFF9F0;
+  background-image: radial-gradient(#C7A56A 0.4px, transparent 0.4px), radial-gradient(#741F3A 0.3px, #FFF9F0 0.3px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+/* Subtle vintage border & gold foil shine */
+.gold-border {
+  border: 1px solid rgba(199, 165, 106, 0.4);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #741F3A 0%, #9B2D4E 50%, #741F3A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-accent-text {
+  color: #C7A56A;
+}
+
+/* Hero Artboard & Absolute Positioning Coordinates (941x1672 Aspect Ratio) */
+.hero-artboard {
+  position: relative;
+  width: min(100%, calc(100dvh * 941 / 1672));
+  aspect-ratio: 941 / 1672;
+  max-height: 100dvh;
+  margin: 0 auto;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.hero-artwork-scale {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.02);
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.hero-artwork-scale img.hero-media-layer,
+.hero-artwork-scale video.hero-media-layer,
+.hero-artboard img.hero-media-layer,
+.hero-artboard video.hero-media-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* SVG Text Overlay (941x1672 viewBox Koordinat Sistemi ilə dəqiq yerləşmə) */
+.hero-text-overlay {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.hero-text-overlay g {
+  transform: none !important;
+}
+
+.hero-text-overlay text {
+  transform: none !important;
+}
+
+/* SVG Mətn Animasiyası: yalnız opacity istifadə edir, heç bir hərəkət/translate yoxdur */
+.hero-svg-anim-group {
+  opacity: 0;
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity;
+}
+
+.hero-svg-anim-group.is-visible {
+  opacity: 1;
+}
+
+/* 1. TOY GÜNÜ */
+.hero-svg-eyebrow {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  fill: #741f3a;
+  stroke: rgba(255, 249, 240, 0.95);
+  stroke-width: 1.4px;
+  paint-order: stroke fill;
+  filter: drop-shadow(0 1px 2px rgba(81, 20, 39, 0.16));
+}
+
+/* 2. TARİX */
+.hero-svg-date {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  fill: #741f3a;
+  stroke: rgba(255, 249, 240, 0.92);
+  stroke-width: 1.2px;
+  paint-order: stroke fill;
+  filter: drop-shadow(0 1px 2px rgba(81, 20, 39, 0.14));
+}
+
+/* 3. N & A MONOQRAMI */
+.hero-svg-monogram {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 60px;
+  font-weight: 600;
+  letter-spacing: 9px;
+  fill: #741f3a;
+}
+
+/* 4 & 6. NİGAR VƏ ALİ ADLARI */
+.hero-svg-name {
+  font-family: "Alex Brush", cursive;
+  font-size: 100px;
+  font-weight: 600;
+  fill: #741f3a;
+  stroke: #741f3a;
+  stroke-width: 0.5px;
+  paint-order: stroke fill;
+}
+
+/* 5. AMPERSAND & */
+.hero-svg-ampersand {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 40px;
+  font-weight: 600;
+  fill: #c7a56a;
+}
+
+/* 7. DƏVƏT MƏTNİ */
+.hero-svg-message {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 57px;
+  font-style: italic;
+  font-weight: 600;
+  fill: #741f3a;
+  stroke: #741f3a;
+  stroke-width: 0.2px;
+  paint-order: stroke fill;
+}
+
+/* 8. AŞAĞI BAXIN DÜYMƏSİ */
+.hero-svg-scroll-label {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  fill: #f6d98d;
+  filter:
+    drop-shadow(0 0 3px rgba(246, 217, 141, 0.85))
+    drop-shadow(0 0 7px rgba(199, 165, 106, 0.5));
+  animation: goldenTextGlow 2.8s ease-in-out infinite;
+}
+
+.hero-svg-scroll-arrow {
+  filter:
+    drop-shadow(0 0 3px rgba(246, 217, 141, 0.75))
+    drop-shadow(0 0 6px rgba(199, 165, 106, 0.45));
+  animation: goldenTextGlow 2.8s ease-in-out infinite;
+}
+
+@keyframes goldenTextGlow {
+  0%,
+  100% {
+    opacity: 0.86;
+    filter:
+      drop-shadow(0 0 2px rgba(246, 217, 141, 0.65))
+      drop-shadow(0 0 5px rgba(199, 165, 106, 0.35));
+  }
+
+  50% {
+    opacity: 1;
+    filter:
+      drop-shadow(0 0 4px rgba(255, 232, 168, 0.95))
+      drop-shadow(0 0 9px rgba(199, 165, 106, 0.65));
+  }
+}
+
+.hero-scroll-hitarea {
+  cursor: pointer;
+}
+
+/* Botanical separator styling */
+.botanical-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #C7A56A;
+}
+
+.botanical-divider::before,
+.botanical-divider::after {
+  content: '';
+  height: 1px;
+  width: 48px;
+  background: linear-gradient(to right, transparent, rgba(199, 165, 106, 0.5));
+}
+
+.botanical-divider::after {
+  background: linear-gradient(to left, transparent, rgba(199, 165, 106, 0.5));
+}
+
+/* ==========================================================================
+   Fiziki Dəvətnamə Daxili Səhifələri: OrnateSection & Arabesque Panel
+   ========================================================================== */
+.invitation-section {
+  position: relative;
+  padding: 24px 16px;
+  background-color: #F7F1E7;
+}
+
+.ornate-panel {
+  position: relative;
+  width: 100%;
+  max-width: 410px;
+  margin: 0 auto;
+  padding: 50px 24px 42px;
+  background: rgba(255, 249, 240, 0.95);
+  border: 1px solid rgba(199, 165, 106, 0.55);
+  box-shadow:
+    0 18px 45px rgba(81, 20, 39, 0.08),
+    inset 0 0 30px rgba(199, 165, 106, 0.07);
+  border-radius: 110px 110px 54px 54px / 70px 70px 45px 45px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Panelin daxili incə qabarıq fil sümüyü/qızılı konturu */
+.ornate-panel-inner-border {
+  position: absolute;
+  inset: 7px;
+  border-radius: 103px 103px 48px 48px / 65px 65px 40px 40px;
+  border: 1px dashed rgba(199, 165, 106, 0.35);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Zərif Başlıq Ayırıcısı: Ortada romb, hər iki tərəfdə nazik qızılı xətt */
+.ornate-title-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px auto 22px;
+  width: 100%;
+  max-width: 200px;
+}
+
+.ornate-title-divider::before,
+.ornate-title-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(199, 165, 106, 0.7));
+}
+
+.ornate-title-divider::after {
+  background: linear-gradient(to left, transparent, rgba(199, 165, 106, 0.7));
+}
+
+.ornate-title-rhombus {
+  width: 5px;
+  height: 5px;
+  background-color: #C7A56A;
+  transform: rotate(45deg);
+  border-radius: 0.5px;
+  flex-shrink: 0;
+}
+
+/* Scroll Fade-in animasiyası: 700ms, opacity 0->1, translateY 20px->0 */
+.ornate-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.ornate-fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Kəpənək zərif qanad yellənməsi */
+@keyframes subtle-butterfly-flutter {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(0.96, 1.02) rotate(-1.5deg);
+  }
+}
+
+.ornate-butterfly-animated {
+  animation: subtle-butterfly-flutter 4.5s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+/* Animation durations & reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .ornate-fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .hero-svg-anim-group {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .ornate-butterfly-animated {
+    animation: none !important;
+  }
+  .hero-svg-scroll-label,
+  .hero-svg-scroll-arrow {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}

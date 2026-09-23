@@ -1,0 +1,458 @@
+/* Scoped strictly inside .invitation5-wrapper */
+.invitation5-wrapper {
+  --inv5-ivory: #f7f2e8;
+  --inv5-paper: #f1e8d8;
+  --inv5-champagne: #c4aa78;
+  --inv5-gold: #a98a54;
+  --inv5-text: #64513c;
+  --inv5-muted: #8a7963;
+
+  --inv5-script: "Alex Brush", "Allura", "Dancing Script", cursive;
+  --inv5-serif: "Cormorant Garamond", "Playfair Display", serif;
+  --inv5-ui: "Montserrat", Arial, sans-serif;
+
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--inv5-ivory);
+  color: var(--inv5-text);
+  overflow-x: hidden;
+  font-family: var(--inv5-serif);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.invitation5-wrapper .inv5-font-script {
+  font-family: var(--inv5-script);
+}
+
+.invitation5-wrapper .inv5-font-serif {
+  font-family: var(--inv5-serif);
+}
+
+.invitation5-wrapper .inv5-font-ui {
+  font-family: var(--inv5-ui);
+}
+
+.invitation5-wrapper .invitation5-container {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background-color: var(--inv5-ivory);
+  box-shadow: 0 10px 40px rgba(70, 50, 40, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Base 9:16 section with zero margins, padding, gap, and zero line-height */
+.invitation5-wrapper .invitation5-section {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  overflow: hidden;
+  background-color: var(--inv5-ivory);
+  display: block;
+}
+
+/* Media styles: strictly block, 100% dimensions, object-cover */
+.invitation5-wrapper .invitation5-media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 0;
+  vertical-align: top;
+}
+
+/* Intro Overlay layer */
+.invitation5-wrapper .invitation5-intro-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background-color: var(--inv5-ivory);
+  pointer-events: auto;
+  transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1), visibility 800ms;
+}
+
+.invitation5-wrapper .invitation5-intro-layer.invitation5-fade-out {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* Elegant Tap to Open Button */
+.invitation5-wrapper .invitation5-tap-button {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 28px;
+  border-radius: 9999px;
+  background: rgba(247, 242, 232, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(196, 170, 120, 0.65);
+  color: var(--inv5-text);
+  font-family: var(--inv5-ui);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(90, 70, 50, 0.12), 0 0 20px rgba(196, 170, 120, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  line-height: 1;
+  animation: invitation5-pulse 2.5s infinite ease-in-out;
+}
+
+.invitation5-wrapper .invitation5-tap-button:hover,
+.invitation5-wrapper .invitation5-tap-button:active {
+  background: rgba(255, 253, 249, 0.96);
+  border-color: rgba(169, 138, 84, 0.95);
+  box-shadow: 0 12px 35px rgba(90, 70, 50, 0.18), 0 0 28px rgba(169, 138, 84, 0.4);
+  transform: translateX(-50%) scale(1.03);
+}
+
+.invitation5-wrapper .invitation5-tap-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--inv5-gold);
+  box-shadow: 0 0 8px rgba(169, 138, 84, 0.8);
+}
+
+@keyframes invitation5-pulse {
+  0%, 100% {
+    box-shadow: 0 10px 30px rgba(90, 70, 50, 0.12), 0 0 15px rgba(169, 138, 84, 0.2);
+  }
+  50% {
+    box-shadow: 0 10px 35px rgba(90, 70, 50, 0.2), 0 0 26px rgba(169, 138, 84, 0.45);
+  }
+}
+
+/* Page 1 container styles */
+.invitation5-wrapper .invitation5-page-1,
+.invitation5-wrapper .invitation5-page-one {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 0;
+  line-height: 0;
+}
+
+/* Ailə adı: əsas dəvət mətnindən aşağıda ayrıca imza kimi */
+.invitation5-wrapper .invitation5-family-names {
+  display: block;
+  margin-top: clamp(24px, 5vw, 38px);
+  font-size: clamp(20px, 4.8vw, 28px);
+  line-height: 1.2;
+  text-align: center;
+  color: #7c6850;
+  max-width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+  word-wrap: break-word;
+}
+
+/* Page 1 bottom soft blend: 120px subtle ivory transition into countdown */
+.invitation5-wrapper .invitation5-page-1-bottom-blend {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  pointer-events: none;
+  z-index: 10;
+  background: linear-gradient(
+    180deg,
+    rgba(247, 242, 232, 0) 0%,
+    rgba(247, 242, 232, 0.45) 45%,
+    #f7f2e8 100%
+  );
+}
+
+/* ==========================================================
+   GERİ SAYIM BÖLMƏSİ - BİRİNCİ SƏHİFƏNİN FASİLƏSİZ İVORY DAVAMI (AYRICA KART DEYİL)
+   ========================================================== */
+
+.invitation5-wrapper .invitation5-countdown-section {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0;
+  margin-top: -2px;
+  padding-top: clamp(44px, 9vw, 56px);
+  padding-bottom: clamp(36px, 7vw, 48px);
+  background: #f7f2e8;
+  border-top: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+/* İki səhifənin sərhədində 140px yumşaq ivory gradient qatı */
+.invitation5-wrapper .invitation5-countdown-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -70px;
+  height: 140px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(247, 242, 232, 0),
+    rgba(247, 242, 232, 0.82) 45%,
+    #f7f2e8 100%
+  );
+  z-index: 1;
+}
+
+/* Page 2 container styles (retained as inactive/dormant utility) */
+.invitation5-wrapper .invitation5-page-2 {
+  position: relative;
+  z-index: 5;
+  margin-top: -2px;
+  margin-bottom: 0;
+  padding: 0;
+  line-height: 0;
+  transition: opacity 800ms ease-out, transform 800ms ease-out;
+  will-change: opacity, transform;
+}
+
+.invitation5-wrapper .invitation5-page-2-hidden {
+  opacity: 0.4;
+  transform: translateY(12px);
+}
+
+.invitation5-wrapper .invitation5-page-2-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Soft 100-140px visual transition layer at the seam */
+.invitation5-wrapper .invitation5-seam-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  pointer-events: none;
+  z-index: 10;
+  background: linear-gradient(
+    180deg,
+    rgba(240, 230, 218, 0.72) 0%,
+    rgba(245, 238, 228, 0.45) 35%,
+    rgba(245, 238, 228, 0.15) 70%,
+    rgba(245, 238, 228, 0) 100%
+  );
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* ==========================================================
+   SUBPAGES (PAGES 3+) - ROYAL STATIONERY & PHYSICAL INVITATION AESTHETIC
+   ========================================================== */
+
+/* Subpage container: seamless continuation with -2px margin-top */
+.invitation5-wrapper .invitation5-subpage {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  margin-top: -2px;
+  padding: 14px 16px 28px 16px;
+  background-color: var(--inv5-ivory);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* 100-140px Soft Champagne/Ivory Gradient Blend at the top of each subpage */
+.invitation5-wrapper .invitation5-seam-blend {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 110px;
+  pointer-events: none;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgba(232, 221, 200, 0.38) 0%,
+    rgba(247, 242, 232, 0) 100%
+  );
+}
+
+/* Royal Paper Card Canvas with Double Gold Frame & Corner Filigrees (Physical Stationery Feel) */
+.invitation5-wrapper .invitation5-paper-canvas {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #FAF6EE 0%, #F5EFE3 100%);
+  border: 1px solid rgba(196, 170, 120, 0.45);
+  outline: 1px solid rgba(196, 170, 120, 0.22);
+  outline-offset: -7px;
+  border-radius: 6px;
+  padding: 30px 18px 24px 18px;
+  box-shadow: 0 4px 20px rgba(100, 81, 60, 0.04);
+}
+
+@media (min-width: 400px) {
+  .invitation5-wrapper .invitation5-paper-canvas {
+    padding: 34px 24px 28px 24px;
+  }
+}
+
+.invitation5-wrapper .invitation5-section-body {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Royal Action Pill Button (Təqvimə əlavə et, Xəritədə bax) - Golden Wax Seal / Oval Accent */
+.invitation5-wrapper .invitation5-action-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(241, 232, 216, 0.75) 0%, rgba(230, 215, 185, 0.6) 100%);
+  border: 1px solid rgba(169, 138, 84, 0.65);
+  color: var(--inv5-text);
+  font-family: var(--inv5-serif);
+  font-size: 14.5px;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(100, 81, 60, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.invitation5-wrapper .invitation5-action-button:hover,
+.invitation5-wrapper .invitation5-action-button:active {
+  background: linear-gradient(135deg, rgba(245, 238, 225, 0.95) 0%, rgba(236, 223, 198, 0.85) 100%);
+  border-color: rgba(169, 138, 84, 0.95);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(100, 81, 60, 0.12);
+}
+
+/* RSVP Form Inputs: Non-standard browser look, delicate underline and warm ivory */
+.invitation5-wrapper .invitation5-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px 4px;
+  border: none;
+  border-bottom: 1px solid rgba(196, 170, 120, 0.55);
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--inv5-text);
+  font-size: 14.5px;
+  font-family: var(--inv5-serif);
+  transition: all 0.25s ease;
+}
+
+.invitation5-wrapper .invitation5-input:focus {
+  outline: none;
+  border-bottom: 1px solid var(--inv5-gold);
+  background-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 1px 0 var(--inv5-gold);
+}
+
+.invitation5-wrapper .invitation5-input::placeholder {
+  color: rgba(138, 121, 99, 0.6);
+  font-style: italic;
+  font-family: var(--inv5-serif);
+}
+
+/* Submit Button: Champagne-gold elegant oval seal */
+.invitation5-wrapper .invitation5-submit-button {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #745F45 0%, #5B4834 100%);
+  color: #FAF6EE;
+  font-family: var(--inv5-serif);
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid var(--inv5-gold);
+  cursor: pointer;
+  box-shadow: 0 5px 18px rgba(91, 72, 52, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.invitation5-wrapper .invitation5-submit-button:hover:not(:disabled),
+.invitation5-wrapper .invitation5-submit-button:active:not(:disabled) {
+  background: linear-gradient(135deg, #64513C 0%, #4D3C2A 100%);
+  border-color: #C4AA78;
+  box-shadow: 0 7px 22px rgba(91, 72, 52, 0.28);
+  transform: translateY(-1px);
+}
+
+.invitation5-wrapper .invitation5-page-two-date {
+  font-size: clamp(18px, 4.2vw, 24px);
+  letter-spacing: 0.08em;
+}
+
+.invitation5-wrapper .invitation5-page-two-venue {
+  font-size: clamp(17px, 4vw, 23px);
+}
+
+.invitation5-wrapper .invitation5-submit-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Scroll Fade Up Animation */
+@keyframes invitation5FadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.invitation5-wrapper .invitation5-fade-up {
+  animation: invitation5FadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .invitation5-wrapper .invitation5-fade-up,
+  .invitation5-wrapper .invitation5-tap-button {
+    animation: none !important;
+    transition: none !important;
+  }
+}
