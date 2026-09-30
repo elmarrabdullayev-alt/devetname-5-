@@ -1,5 +1,5 @@
 import React from 'react';
-import { RoyalCornerFiligree, RoyalDivider, RoyalCrownFiligree } from './Invitation5Ornament';
+import { RoyalDivider, RoyalCrownFiligree } from './Invitation5Ornament';
 
 export interface Invitation5SectionShellProps {
   id?: string;
@@ -20,21 +20,15 @@ export const Invitation5SectionShell: React.FC<Invitation5SectionShellProps> = (
 }) => {
   return (
     <section id={id} className={`invitation5-subpage invitation5-fade-up ${className}`}>
-      {/* 100-140px Soft Champagne/Ivory Gradient Blend from previous section */}
+      {/* Soft Champagne/Ivory Gradient Blend from previous section */}
       <div className="invitation5-seam-blend" aria-hidden="true" />
 
-      {/* Royal Paper Card Canvas with Double Gold Frame & Corner Filigrees */}
-      <div className="invitation5-paper-canvas">
-        {/* 4 Corner Ornaments */}
-        <RoyalCornerFiligree position="top-left" />
-        <RoyalCornerFiligree position="top-right" />
-        <RoyalCornerFiligree position="bottom-left" />
-        <RoyalCornerFiligree position="bottom-right" />
-
+      {/* Full-width continuous content (no page-sized card, no outer border, no corner filigrees) */}
+      <div className="invitation5-section-content">
         {/* Section Header */}
         {(scriptHeader || mainTitle) && (
-          <header className="text-center pt-2 pb-1 px-4 select-none">
-            <RoyalCrownFiligree className="mb-1 opacity-80" />
+          <header className="text-center pt-1 pb-1 px-4 select-none">
+            <RoyalCrownFiligree className="mb-1 opacity-75" />
 
             {scriptHeader && (
               <p className="inv5-font-script text-2xl sm:text-[28px] text-[#a98a54] leading-tight drop-shadow-xs">
@@ -54,7 +48,7 @@ export const Invitation5SectionShell: React.FC<Invitation5SectionShellProps> = (
               </p>
             )}
 
-            <RoyalDivider className="my-3.5" />
+            <RoyalDivider className="my-3.5 opacity-60" />
           </header>
         )}
 

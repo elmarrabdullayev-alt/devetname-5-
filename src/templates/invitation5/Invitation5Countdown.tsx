@@ -92,7 +92,13 @@ export const Invitation5Countdown: React.FC<Invitation5CountdownProps> = ({
       const location = encodeURIComponent(`${venueName}, ${venueAddress}`.trim());
 
       const googleCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDateTime}/${startDateTime}&details=${details}&location=${location}`;
-      window.open(googleCalUrl, '_blank', 'noopener,noreferrer');
+      const link = document.createElement('a');
+      link.href = googleCalUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     } catch {
       // Fallback
     }

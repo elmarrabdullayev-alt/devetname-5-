@@ -139,7 +139,7 @@ export const Invitation5Template: React.FC<Invitation5TemplateProps> = ({ data }
             familyNames={config.familyNames}
           />
 
-          {/* 3. Geri sayım və tarix (Birinci səhifədən sonra birbaşa açılır) */}
+          {/* 3. Geri sayım və tarix */}
           <Invitation5Countdown
             eventDate={config.eventDate}
             startTime={config.startTime}

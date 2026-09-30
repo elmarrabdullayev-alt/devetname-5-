@@ -62,7 +62,13 @@ export const Invitation5RSVP: React.FC<Invitation5RSVPProps> = ({
           const encodedMessage = encodeURIComponent(message);
           const waUrl = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
 
-          window.open(waUrl, '_blank', 'noopener,noreferrer');
+          const link = document.createElement('a');
+          link.href = waUrl;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
         }
       }
 

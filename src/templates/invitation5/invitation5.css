@@ -50,6 +50,13 @@
   overflow-x: hidden;
 }
 
+@media (max-width: 480px) {
+  .invitation5-wrapper .invitation5-container {
+    box-shadow: none;
+    max-width: 100%;
+  }
+}
+
 /* Base 9:16 section with zero margins, padding, gap, and zero line-height */
 .invitation5-wrapper .invitation5-section {
   position: relative;
@@ -231,99 +238,53 @@
   z-index: 1;
 }
 
-/* Page 2 container styles (retained as inactive/dormant utility) */
-.invitation5-wrapper .invitation5-page-2 {
-  position: relative;
-  z-index: 5;
-  margin-top: -2px;
-  margin-bottom: 0;
-  padding: 0;
-  line-height: 0;
-  transition: opacity 800ms ease-out, transform 800ms ease-out;
-  will-change: opacity, transform;
-}
-
-.invitation5-wrapper .invitation5-page-2-hidden {
-  opacity: 0.4;
-  transform: translateY(12px);
-}
-
-.invitation5-wrapper .invitation5-page-2-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Soft 100-140px visual transition layer at the seam */
-.invitation5-wrapper .invitation5-seam-gradient {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 120px;
-  pointer-events: none;
-  z-index: 10;
-  background: linear-gradient(
-    180deg,
-    rgba(240, 230, 218, 0.72) 0%,
-    rgba(245, 238, 228, 0.45) 35%,
-    rgba(245, 238, 228, 0.15) 70%,
-    rgba(245, 238, 228, 0) 100%
-  );
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-}
-
 /* ==========================================================
-   SUBPAGES (PAGES 3+) - ROYAL STATIONERY & PHYSICAL INVITATION AESTHETIC
+   SUBPAGES (PAGES 3+) - CONTINUOUS ROYAL STATIONERY FLOW
    ========================================================== */
 
-/* Subpage container: seamless continuation with -2px margin-top */
+/* Subpage container: seamless continuous flow with 100% width and safe internal padding */
 .invitation5-wrapper .invitation5-subpage {
   position: relative;
   width: 100%;
   margin: 0;
   margin-top: -2px;
-  padding: 14px 16px 28px 16px;
+  padding: clamp(32px, 7vw, 48px) clamp(16px, 5vw, 24px);
   background-color: var(--inv5-ivory);
   overflow: hidden;
   box-sizing: border-box;
 }
 
-/* 100-140px Soft Champagne/Ivory Gradient Blend at the top of each subpage */
+/* Subtle Soft Champagne/Ivory Gradient Blend at the top of each subpage */
 .invitation5-wrapper .invitation5-seam-blend {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 110px;
+  height: 80px;
   pointer-events: none;
   z-index: 2;
   background: linear-gradient(
     180deg,
-    rgba(232, 221, 200, 0.38) 0%,
+    rgba(228, 216, 195, 0.22) 0%,
     rgba(247, 242, 232, 0) 100%
   );
 }
 
-/* Royal Paper Card Canvas with Double Gold Frame & Corner Filigrees (Physical Stationery Feel) */
+/* Section Content: Zero outer borders, zero outlines, zero box-shadows, zero corner lines */
+.invitation5-wrapper .invitation5-section-content,
 .invitation5-wrapper .invitation5-paper-canvas {
   position: relative;
   z-index: 5;
   width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
   box-sizing: border-box;
-  background: linear-gradient(180deg, #FAF6EE 0%, #F5EFE3 100%);
-  border: 1px solid rgba(196, 170, 120, 0.45);
-  outline: 1px solid rgba(196, 170, 120, 0.22);
-  outline-offset: -7px;
-  border-radius: 6px;
-  padding: 30px 18px 24px 18px;
-  box-shadow: 0 4px 20px rgba(100, 81, 60, 0.04);
-}
-
-@media (min-width: 400px) {
-  .invitation5-wrapper .invitation5-paper-canvas {
-    padding: 34px 24px 28px 24px;
-  }
+  background: transparent;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
 }
 
 .invitation5-wrapper .invitation5-section-body {
@@ -417,15 +378,6 @@
   border-color: #C4AA78;
   box-shadow: 0 7px 22px rgba(91, 72, 52, 0.28);
   transform: translateY(-1px);
-}
-
-.invitation5-wrapper .invitation5-page-two-date {
-  font-size: clamp(18px, 4.2vw, 24px);
-  letter-spacing: 0.08em;
-}
-
-.invitation5-wrapper .invitation5-page-two-venue {
-  font-size: clamp(17px, 4vw, 23px);
 }
 
 .invitation5-wrapper .invitation5-submit-button:disabled {

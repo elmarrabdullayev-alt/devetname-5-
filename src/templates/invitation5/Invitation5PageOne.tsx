@@ -13,6 +13,8 @@ export interface Invitation5PageOneProps {
 export const Invitation5PageOne: React.FC<Invitation5PageOneProps> = ({
   groomName,
   brideName,
+  eventDate,
+  startTime,
   invitationText,
   familyNames,
 }) => {
@@ -70,12 +72,12 @@ export const Invitation5PageOne: React.FC<Invitation5PageOneProps> = ({
       {/* 
         3. Text Layers: Positioned independently from video via absolute coordinates.
         Lüstra 0% - 44% intervalındadır və tam görünür; heç bir mətn onun üzərini örtmür.
-        Birinci səhifədə yalnız bunlar qalsın:
-        1. Toy dəvətnaməsi
+        1. Toy dəvətnaməsi başlığı
         2. Bəy və gəlin adları
-        3. Ornamental ayırıcı
-        4. Dəvət mətni
-        5. Ailə adları
+        3. Toy tarixi və başlama saatı
+        4. Ornamental ayırıcı
+        5. Fərdi dəvət mətni
+        6. Ailə adları (yalnız daxil edilibsə)
       */}
 
       {/* 1. Kiçik başlıq: lüstranın dərhal altında, adların üzərində (~44%) */}
@@ -91,7 +93,7 @@ export const Invitation5PageOne: React.FC<Invitation5PageOneProps> = ({
         </p>
       </div>
 
-      {/* 2. Bəy və gəlin adları: lüstranın altında, 25-30% böyüdülmüş və tündləşdirilmiş (~47.5%) */}
+      {/* 2. Bəy və gəlin adları: lüstranın altında (~47.5%) */}
       <div
         className="absolute left-1/2 -translate-x-1/2 z-20 w-[92%] max-w-[440px] text-center pointer-events-none"
         style={{ top: '47.5%' }}
@@ -99,7 +101,7 @@ export const Invitation5PageOne: React.FC<Invitation5PageOneProps> = ({
         <div
           className="inv5-font-script text-[#5c472d] flex flex-wrap items-center justify-center gap-x-2.5 font-normal"
           style={{
-            fontSize: 'clamp(54px, 13vw, 82px)',
+            fontSize: 'clamp(52px, 12.5vw, 80px)',
             lineHeight: 0.95,
             textShadow: '0 2px 14px rgba(255, 255, 255, 0.88), 0 1px 3px rgba(255, 255, 255, 0.95)',
           }}
@@ -115,15 +117,35 @@ export const Invitation5PageOne: React.FC<Invitation5PageOneProps> = ({
         </div>
       </div>
 
-      {/* 3. Ornamental ayırıcı: adların altında (~60.5%) */}
+      {/* 3. Toy tarixi və Başlama saatı (~58%) */}
+      {(eventDate || startTime) && (
+        <div
+          className="absolute left-1/2 -translate-x-1/2 z-20 w-[88%] max-w-[340px] text-center pointer-events-none"
+          style={{ top: '58%' }}
+        >
+          <p
+            className="inv5-font-serif text-[#64513c] tracking-[0.14em] font-medium uppercase"
+            style={{
+              fontSize: 'clamp(13px, 3.2vw, 17px)',
+              textShadow: '0 2px 8px rgba(255, 255, 255, 0.92)',
+            }}
+          >
+            {eventDate}
+            {startTime && <span className="text-[#a98a54] mx-1.5">•</span>}
+            {startTime && `Saat ${startTime}`}
+          </p>
+        </div>
+      )}
+
+      {/* 4. Ornamental ayırıcı: adların və tarixin altında (~61.5%) */}
       <div
-        className="absolute left-1/2 -translate-x-1/2 z-20 w-[55%] max-w-[220px] pointer-events-none"
-        style={{ top: '60.5%' }}
+        className="absolute left-1/2 -translate-x-1/2 z-20 w-[50%] max-w-[200px] pointer-events-none"
+        style={{ top: '61.5%' }}
       >
         <RoyalDivider className="my-0 opacity-70" />
       </div>
 
-      {/* 4. Dəvət mətni və 5. Ailə adları: birbaşa kağız üzərində (~65.5%) */}
+      {/* 5. Dəvət mətni və 6. Ailə adları (~65.5%) */}
       <div
         className="absolute left-1/2 -translate-x-1/2 z-20 w-[80%] max-w-[360px] text-center pointer-events-none"
         style={{ top: '65.5%' }}
@@ -131,7 +153,7 @@ export const Invitation5PageOne: React.FC<Invitation5PageOneProps> = ({
         <p
           className="inv5-font-serif italic text-[#55432f] font-normal"
           style={{
-            fontSize: 'clamp(18px, 4.3vw, 25px)',
+            fontSize: 'clamp(16.5px, 4vw, 23px)',
             lineHeight: 1.45,
             textShadow: '0 2px 10px rgba(255, 255, 255, 0.92), 0 1px 2px rgba(255, 255, 255, 0.95)',
           }}
@@ -152,9 +174,7 @@ export const Invitation5PageOne: React.FC<Invitation5PageOneProps> = ({
         )}
       </div>
 
-      {/* Qeyd: Ən aşağıdakı tarix və saat kapsulu tamamilə silindi */}
-
-      {/* 5. Səhifələrarası Keçid Ornamenti: Birinci səhifə ilə Geri sayım arasında yeganə ortaq keçid detalı */}
+      {/* Səhifələrarası Keçid Ornamenti: Birinci səhifə ilə Geri sayım arasında yeganə ortaq keçid detalı */}
       <div
         className="invitation5-seam-ornament absolute left-1/2 -translate-x-1/2 z-20 w-[50%] max-w-[210px] pointer-events-none"
         style={{ bottom: 'clamp(12px, 3vw, 18px)' }}
@@ -162,7 +182,7 @@ export const Invitation5PageOne: React.FC<Invitation5PageOneProps> = ({
         <RoyalDivider className="my-0 opacity-75" />
       </div>
 
-      {/* 6. Yumşaq 100-140px Keçid Qatı (Geri sayım bölməsinə axıcı keçid üçün) */}
+      {/* Yumşaq 100-140px Keçid Qatı (Geri sayım bölməsinə axıcı keçid üçün) */}
       <div className="invitation5-page-1-bottom-blend" aria-hidden="true" />
     </section>
   );

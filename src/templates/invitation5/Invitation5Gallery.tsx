@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { GalleryItem } from './types';
 import { Invitation5SectionShell } from './Invitation5SectionShell';
-import { RoyalCornerFiligree } from './Invitation5Ornament';
 
 export interface Invitation5GalleryProps {
   galleryTitle?: string;
@@ -75,10 +74,6 @@ export const Invitation5Gallery: React.FC<Invitation5GalleryProps> = ({
           >
             {/* İkiqat daxili haşiyə */}
             <div className="absolute inset-2 border border-[#c4aa78]/30 rounded-md pointer-events-none z-10" />
-            
-            {/* Künc ornamentləri */}
-            <RoyalCornerFiligree position="top-left" className="top-3.5 left-3.5" />
-            <RoyalCornerFiligree position="bottom-right" className="bottom-3.5 right-3.5" />
 
             <div className="w-full h-full overflow-hidden rounded-md">
               <img
@@ -104,10 +99,6 @@ export const Invitation5Gallery: React.FC<Invitation5GalleryProps> = ({
               {/* İkiqat daxili haşiyə */}
               <div className="absolute inset-2 border border-[#c4aa78]/30 rounded-md pointer-events-none z-10" />
 
-              {/* Künc ornamentləri */}
-              <RoyalCornerFiligree position="top-left" className="top-3.5 left-3.5" />
-              <RoyalCornerFiligree position="bottom-right" className="bottom-3.5 right-3.5" />
-
               <div className="w-full h-full overflow-hidden rounded-md">
                 <img
                   src={visibleGallery[0].url}
@@ -130,10 +121,6 @@ export const Invitation5Gallery: React.FC<Invitation5GalleryProps> = ({
             >
               {/* İkiqat daxili haşiyə */}
               <div className="absolute inset-2 border border-[#c4aa78]/30 rounded-md pointer-events-none z-10" />
-
-              {/* Künc ornamentləri */}
-              <RoyalCornerFiligree position="top-right" className="top-3.5 right-3.5" />
-              <RoyalCornerFiligree position="bottom-left" className="bottom-3.5 left-3.5" />
 
               <div className="w-full h-full overflow-hidden rounded-md">
                 <img

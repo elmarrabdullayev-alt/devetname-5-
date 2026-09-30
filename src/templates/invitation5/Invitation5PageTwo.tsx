@@ -87,9 +87,7 @@ export const Invitation5PageTwo: React.FC<Invitation5PageTwoProps> = ({
   return (
     <section
       ref={sectionRef}
-      className={`invitation5-section invitation5-page-2 relative overflow-hidden select-none ${
-        hasScrolledIn ? 'invitation5-page-2-visible' : 'invitation5-page-2-hidden'
-      }`}
+      className="invitation5-section invitation5-page-2 relative overflow-hidden select-none"
     >
       {/* 1. Underlying Poster: always ready in DOM */}
       <img
@@ -98,21 +96,22 @@ export const Invitation5PageTwo: React.FC<Invitation5PageTwoProps> = ({
         className="invitation5-media absolute inset-0 z-0"
       />
 
-      {/* 2. Motion Video: Preloads when near viewport, pauses when out of viewport */}
+      {/* 2. Motion Video: full visual background without card or border */}
       {!prefersReducedMotion && (
         <video
           ref={videoRef}
           src="/templates/invitation5/page-2-motion.webm"
           poster="/templates/invitation5/page-2-poster.webp"
+          autoPlay
           muted
           loop
           playsInline
-          preload="none"
+          preload="auto"
           className="invitation5-media absolute inset-0 z-10"
         />
       )}
 
-      {/* 3. Soft 100-140px Visual Transition Gradient Layer at the seam */}
+      {/* 3. Soft 100-140px Visual Transition Gradient Layer at the top seam */}
       <div className="invitation5-seam-gradient" aria-hidden="true" />
 
       {/* 
@@ -214,6 +213,9 @@ export const Invitation5PageTwo: React.FC<Invitation5PageTwoProps> = ({
           )}
         </div>
       )}
+
+      {/* 5. Soft bottom blend transitioning to countdown */}
+      <div className="invitation5-page-2-bottom-blend" aria-hidden="true" />
     </section>
   );
 };
